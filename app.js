@@ -13,33 +13,33 @@ hbs.registerPartials(__dirname + '/views/partials');
 // servir contenido estatico
 app.use(express.static('public'))
  
-// app.get('/', function (req, res) {
-//     res.render('home',{
-//         nombre: 'Enilio Sarcos',
-//         titulo: 'Curso de Node'
-//     });
-// });
+app.get('/', function (req, res) {
+    res.render('home',{
+        nombre: 'Enilio Sarcos',
+        titulo: 'Curso de Node'
+    });
+});
 
-// app.get('/generic', function (req, res) {
+app.get('/generic', function (req, res) {
 
-//     res.render('generic',{
-//         nombre: 'Enilio Sarcos',
-//         titulo: 'Generic'
-//     })
-//     // res.sendFile(__dirname + '/public/generic.html');
-// });
+    res.render('generic',{
+        nombre: 'Enilio Sarcos',
+        titulo: 'Generic'
+    })
+    // res.sendFile(__dirname + '/public/generic.html');
+});
 
-// app.get('/elements', function (req, res) {
+app.get('/elements', function (req, res) {
 
-//     res.render('elements',{
-//         nombre: 'Enilio Sarcos',
-//         titulo: 'Elements'
-//     })
-//     // res.sendFile(__dirname + '/public/elements.html');
-// });
+    res.render('elements',{
+        nombre: 'Enilio Sarcos',
+        titulo: 'Elements'
+    })
+    // res.sendFile(__dirname + '/public/elements.html');
+});
 
 app.get('*', function (req, res) {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/public/404.html');
   });
  
 app.listen(port, () => {
